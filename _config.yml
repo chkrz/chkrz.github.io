@@ -1,1 +1,21 @@
-theme: jekyll-theme-minimal
+title: Hui Cai
+description: AI Engineer & Researcher. Thoughts on AI, technology, and beyond.
+url: "https://chkrz.github.io"
+baseurl: ""
+
+permalink: /blog/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
