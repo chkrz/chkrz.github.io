@@ -88,6 +88,26 @@ a:hover {
   color: var(--text);
 }
 
+.lang-divider {
+  color: var(--border);
+  font-weight: 300;
+}
+
+.lang-switch {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.lang-switch:hover {
+  color: var(--text);
+  border-color: var(--text-secondary);
+}
+
 /* Hero / Intro */
 .hero {
   margin-bottom: 3rem;

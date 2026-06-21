@@ -2,6 +2,8 @@
 layout: post
 title: "I Need a War Room, Not a Chat Window"
 date: 2026-04-26
+lang: en
+ref: new-interface-for-ai
 ---
 
 I'm an algorithm engineer. My work spans training language models and building AI-powered applications -- designing experiments, submitting training jobs to GPU clusters, developing multi-agent systems, shipping features. I usually have multiple projects running in parallel, each with its own context, configs, and deadlines.

@@ -3,8 +3,21 @@
     <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
     <nav class="site-nav">
       <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
-      <a href="{{ '/blog' | relative_url }}" {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a>
+      <a href="{{ '/blog' | relative_url }}" {% if page.url contains '/blog' and page.lang != 'zh' %}class="active"{% endif %}>Blog</a>
       <a href="{{ '/about' | relative_url }}" {% if page.url == '/about/' or page.url == '/about' %}class="active"{% endif %}>About</a>
+      <span class="lang-divider">|</span>
+      {% if page.ref %}
+        {% assign translations = site.posts | where: "ref", page.ref %}
+        {% for t in translations %}
+          {% unless t.lang == page.lang %}
+            <a href="{{ t.url | relative_url }}" class="lang-switch">{% if t.lang == 'zh' %}中文{% else %}EN{% endif %}</a>
+          {% endunless %}
+        {% endfor %}
+      {% elsif page.lang == 'zh' %}
+        <a href="{{ '/blog' | relative_url }}" class="lang-switch">EN</a>
+      {% else %}
+        <a href="{{ '/blog/zh/' | relative_url }}" class="lang-switch">中文</a>
+      {% endif %}
     </nav>
   </div>
 </header>
