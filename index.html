@@ -20,7 +20,7 @@ ref: home
 
 <section>
   <h2 class="section-title">Recent Writing</h2>
-  {% assign posts = site.posts | slice: 0, 5 %}
+  {% assign posts = site.posts | where: "lang", "en" | slice: 0, 5 %}
   {% if posts.size > 0 %}
   <ul class="post-list">
     {% for post in posts %}
