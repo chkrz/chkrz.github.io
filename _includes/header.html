@@ -1,22 +1,24 @@
 <header class="site-header">
   <div class="container">
-    <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+    <a href="{% if page.lang == 'zh' %}{{ '/zh/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" class="site-title">{{ site.title }}</a>
     <nav class="site-nav">
-      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
-      <a href="{{ '/blog' | relative_url }}" {% if page.url contains '/blog' and page.lang != 'zh' %}class="active"{% endif %}>Blog</a>
-      <a href="{{ '/about' | relative_url }}" {% if page.url == '/about/' or page.url == '/about' %}class="active"{% endif %}>About</a>
+      <a href="{% if page.lang == 'zh' %}{{ '/zh/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" {% if page.url == '/' or page.url == '/zh/' %}class="active"{% endif %}>{% if page.lang == 'zh' %}首页{% else %}Home{% endif %}</a>
+      <a href="{% if page.lang == 'zh' %}{{ '/blog/zh/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}" {% if page.url contains '/blog' %}class="active"{% endif %}>{% if page.lang == 'zh' %}博客{% else %}Blog{% endif %}</a>
+      <a href="{% if page.lang == 'zh' %}{{ '/about/zh/' | relative_url }}{% else %}{{ '/about/' | relative_url }}{% endif %}" {% if page.url contains '/about' %}class="active"{% endif %}>{% if page.lang == 'zh' %}关于{% else %}About{% endif %}</a>
       <span class="lang-divider">|</span>
       {% if page.ref %}
-        {% assign translations = site.posts | where: "ref", page.ref %}
+        {% assign post_translations = site.posts | where: "ref", page.ref %}
+        {% assign page_translations = site.pages | where: "ref", page.ref %}
+        {% assign translations = post_translations | concat: page_translations %}
         {% for t in translations %}
           {% unless t.lang == page.lang %}
             <a href="{{ t.url | relative_url }}" class="lang-switch">{% if t.lang == 'zh' %}中文{% else %}EN{% endif %}</a>
           {% endunless %}
         {% endfor %}
       {% elsif page.lang == 'zh' %}
-        <a href="{{ '/blog' | relative_url }}" class="lang-switch">EN</a>
+        <a href="{{ '/' | relative_url }}" class="lang-switch">EN</a>
       {% else %}
-        <a href="{{ '/blog/zh/' | relative_url }}" class="lang-switch">中文</a>
+        <a href="{{ '/zh/' | relative_url }}" class="lang-switch">中文</a>
       {% endif %}
     </nav>
   </div>
