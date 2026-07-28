@@ -139,21 +139,29 @@ a:hover {
 .hero .links {
   margin-top: 1.25rem;
   display: flex;
-  gap: 1.25rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
 .hero .links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   color: var(--text-secondary);
   font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
 }
 
 .hero .links a:hover {
   color: var(--accent);
+  background: rgba(37, 99, 235, 0.08);
 }
 
-.hero .links span {
-  color: var(--border);
+.hero .links a svg {
+  flex-shrink: 0;
 }
 
 /* Section */
