@@ -21,6 +21,25 @@ permalink: /zh/
 </section>
 
 <section>
+  <h2 class="section-title">项目</h2>
+  <div class="project-card">
+    <div class="project-logo"><span class="logo-stock">Stock</span><span class="logo-radar">Radar</span></div>
+    <p class="project-desc">
+      一个围绕两件事构建的市场可视化工具：把实时涨跌渲染出来，让行业之间的分化、以及个股在所属行业内的偏离
+      一眼可辨；同时追踪 X 上高信噪比的声音在说什么。
+    </p>
+    <ul class="project-features">
+      <li>实时热力图，呈现行业轮动与行业内的异动个股</li>
+      <li>推特大 V 追踪与观点分析</li>
+    </ul>
+    <div class="project-links">
+      <a href="https://stock-radar.net/" target="_blank">stock-radar.net &rarr;</a>
+      <a href="https://github.com/chkrz/stockradar" target="_blank">源码</a>
+    </div>
+  </div>
+</section>
+
+<section>
   <h2 class="section-title">近期文章</h2>
   {% assign posts = site.posts | where: "lang", "zh" | slice: 0, 5 %}
   {% if posts.size > 0 %}

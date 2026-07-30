@@ -20,6 +20,26 @@ ref: home
 </section>
 
 <section>
+  <h2 class="section-title">Projects</h2>
+  <div class="project-card">
+    <div class="project-logo"><span class="logo-stock">Stock</span><span class="logo-radar">Radar</span></div>
+    <p class="project-desc">
+      A market visualization tool built around two ideas: rendering real-time price movement so that
+      sector-level divergence — and each stock's deviation within its sector — becomes immediately
+      legible, and tracking what high-signal voices on X are actually saying.
+    </p>
+    <ul class="project-features">
+      <li>Real-time heatmap surfacing sector rotation and intra-sector outliers</li>
+      <li>KOL tweet tracking and analysis</li>
+    </ul>
+    <div class="project-links">
+      <a href="https://stock-radar.net/" target="_blank">stock-radar.net &rarr;</a>
+      <a href="https://github.com/chkrz/stockradar" target="_blank">Source</a>
+    </div>
+  </div>
+</section>
+
+<section>
   <h2 class="section-title">Recent Writing</h2>
   {% assign posts = site.posts | where: "lang", "en" | slice: 0, 5 %}
   {% if posts.size > 0 %}

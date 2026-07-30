@@ -164,14 +164,115 @@ a:hover {
   flex-shrink: 0;
 }
 
+/* Project card */
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  border-color: #d0d0d0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.project-logo {
+  display: inline-block;
+  background: #131c2b;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.logo-stock {
+  color: #fff;
+}
+
+.logo-radar {
+  color: #4a9eff;
+}
+
+.project-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.project-features {
+  list-style: none;
+  margin-bottom: 1.25rem;
+}
+
+.project-features li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+.project-features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.project-links {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.project-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.project-links a:last-child {
+  color: var(--text-muted);
+}
+
+.project-links a:last-child:hover {
+  color: var(--accent);
+}
+
 /* Section */
 .section-title {
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
+  position: relative;
+  padding-left: 0.85rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
   margin-bottom: 1.5rem;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+section + section {
+  margin-top: 3.5rem;
 }
 
 /* Post List */
